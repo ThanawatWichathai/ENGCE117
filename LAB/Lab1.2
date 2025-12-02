@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-void GetSet( int [], int * ) ; //Prototype ประกาศให้รู้ว่ามี function อะไรบ้าง
+void GetSet( int [], int * ) ;
 
-int main() {                   // โลกของเรา
+int main() {                   
     
     int data[500], num = 0 ;
     //data = new int[999] ;
@@ -11,11 +11,11 @@ int main() {                   // โลกของเรา
     return 0 ;
 }//end function 
 
-void GetSet( int data[], int *num ) {  //ต่างโลก                         
-    scanf( "%d", num ) ;  //ถ้าเป็น array กับ pointer ไม่ต้องใส่ &          //รับจำนวนเซตมา
+void GetSet( int data[], int *num ) {                           
+    scanf( "%d", num ) ; 
 
-    for( int i = 0 ; i < *num ; i++ ) {                               //เก็บค่าทีละตัวไว้ใน array 
-        scanf( "%d", &data[i] ) ; //**แต่บรรทัดนี้ต้องใส่
+    for( int i = 0 ; i < *num ; i++ ) {                               
+        scanf( "%d", &data[i] ) ; 
     }//end for
 
     for( int i = 0 ; i < *num ; i++ ) {
