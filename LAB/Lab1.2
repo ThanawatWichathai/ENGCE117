@@ -1,18 +1,25 @@
-void GetSet( int a[] , int *n ) ;
+#include <stdio.h>
 
-int main() {
-    int data[ 500 ] , n = 0 ;
-    GetSet( data, &n ) ;
+void GetSet( int [], int * ) ;
+
+int main() {                  
+    
+    int *data, num = 0 ;
+    data = new int[999] ;          
+    GetSet( data, &num ) ;
+
     return 0 ;
-}//end function
+}//end function 
 
-void GetSet( int a[] , int *n ) {
-    printf( "Enter n : ") ;
-    scanf( "%d" , n ) ;
+void GetSet( int data[], int *num ) {                       
+    scanf( "%d", num ) ;
 
-    printf( "Enter data : ") ;
-    for( int i = 0 ; i < *n ; i++ ) {
-        scanf( "%d" , &a[i] ) ;
+    for( int i = 0 ; i < *num ; i++ ) {
+        scanf( "%d", &data[i] ) ;
+    }//end for
+
+    for( int i = 0 ; i < *num ; i++ ) {
+        printf( "%d ", data[i] ) ;
     }//end for
 
 }//end GetSet
