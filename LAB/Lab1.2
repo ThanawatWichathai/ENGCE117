@@ -6,7 +6,8 @@ int main() {
     
     int data[555], num = 0 ;
     GetSet( data, &num ) ;
-    return 0 ;
+    
+    return 0 ; //ใส่ return 0 ; เรียบร้อยแล้ว
 }//end function 
 
 void GetSet( int data[], int *num ) {                           
@@ -15,9 +16,5 @@ void GetSet( int data[], int *num ) {
     for( int i = 0 ; i < *num ; i++ ) {                               
         scanf( "%d", &data[i] ) ; 
     }//end for
-
-    for( int i = 0 ; i < *num ; i++ ) {
-        printf( "%d ", data[i] ) ;
-    }//end for
-
+    
 }//end GetSet
