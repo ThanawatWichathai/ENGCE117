@@ -1,32 +1,31 @@
 #include <stdio.h>
 #include <string.h>
 
-void reverse( char str1[]) ;
+void reverse( char str1[], char str2[] ) ;
 
 int main() {
 
     char text[50] ;
     char out[50] ;
-    reverse( text ) ;
-	printf( "%s %s\n", text, out ) ;
+    reverse( text, out ) ;
+	printf( "Input = %s\n", text ) ;
+	printf( "Output = %s ", out ) ;
+
     return 0 ;
 }//end function
 
-void reverse( char str1[]) {
+void reverse( char str1[], char str2[] ) {
+
     gets( str1 ) ;
     int lenght = strlen( str1 ) ;
-	int i = 0 ;
-	int j = 0 ;
-	j = lenght - 1 ;
-	char str2 ;
 
+	int i = 0 ;
 	
-	while( i < j ) {
-		str2 = str1[i] ;
-		str1[i] = str1[j] ;
-		str1[j] = str2 ; 
+	while( i < lenght ) {
+		str2[i] = str1[ lenght - 1 - i ] ;
 		i++ ;
-		j-- ;
-	}//end while 
-		
+	}//end while
+
+	str2[ lenght ] = '\0' ;
+
 }//end function
