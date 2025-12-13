@@ -6,18 +6,19 @@ void explode( const char str1[], const char splitter[], char str2[][10], int *co
 int main() {
 	char out[ 20 ][ 10 ] ;
 	int num = 0 ;
-	int i ;
 
-    explode( "Hello Welcome form Isekai", " ", out, &num ) ;
+    explode( "Hello Welcome to Isekai", " /", out, &num ) ;
 	
-	for( i = 0 ; i < num ; i++ ) {
+	for( int i = 0 ; i < num ; i++ ) {
 		printf( "str2[%d] = \"%s\"\n", i, out[ i ] ) ;
-	}
+	}//end for
+
 	if( num != 0 ) {
 		printf( "count = %d", num ) ;
 	} else {
 		printf( "count = 0" ) ;
-	}
+	}//end if
+
     return 0 ;
 }//end function
 
@@ -31,4 +32,5 @@ void explode( const char str1[], const char splitter[], char str2[][10], int *co
 		( *count ) ++ ;
 		token = strtok( NULL, splitter ) ;
 	}//end while
+	
 }//end function
