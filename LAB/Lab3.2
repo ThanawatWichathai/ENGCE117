@@ -1,1 +1,34 @@
+#include <stdio.h>
 
+struct student {
+    char name[ 20 ] ;
+    int age ;
+    char sex ;
+    float gpa ;
+} ;
+
+void upgrade( struct student *child ) ;
+
+int main() {
+
+    struct student agirl ;
+    agirl.sex = 'F' ;
+    agirl.gpa = 3.00 ;
+    printf( "%.2f\n", agirl.gpa ) ;
+
+    upgrade( &agirl ) ;
+    printf( "%.2f", agirl.gpa ) ;
+
+    return 0 ;
+}//end function
+
+void upgrade( struct student *child ) {
+    if( child->sex == 'M' ) {
+        (*child).gpa = ( child->gpa * 0.1 ) + child->gpa ; // ใช้ได้ 2 แบบ
+    }else {
+        (*child).gpa = ( child->gpa * 0.2 ) + child->gpa ;
+    }//end if
+
+    printf( "%.2f\n", (*child).gpa ) ;
+
+}//end function
