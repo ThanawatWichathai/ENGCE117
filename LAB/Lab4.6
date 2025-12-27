@@ -1,1 +1,65 @@
+#include <stdio.h>
+#include <string.h>
 
+struct studentNode {
+	char name[ 20 ] ;
+	int age ;
+	char sex ;
+	float gpa ;
+	struct studentNode *next ; 	
+} ;
+
+void SaveNode( struct studentNode *child, char n[], int a, char s, float g ) ;
+void GoNext2( struct studentNode ***walk ) ;
+
+int main() {
+	
+	struct studentNode *start, *now1, **now2 ;
+	char Text[ 20 ] ;
+	
+	start = new struct studentNode ;
+	strcpy( Text, "one" ) ;
+	SaveNode( start, Text, 6, 'M', 3.11 ) ;
+	
+	start->next = new struct studentNode ;
+	strcpy( Text, "two" ) ;
+	SaveNode( start->next, Text, 8, 'F', 3.22  ) ;
+	
+	start->next->next = new struct studentNode ;
+	strcpy( Text, "three" ) ;
+	SaveNode( start->next->next, Text, 10, 'M', 3.33 ) ;
+	
+	start->next->next->next = new struct studentNode ;
+	strcpy( Text, "four" ) ;
+	SaveNode( start->next->next->next, Text, 12, 'F', 3.44 ) ;
+	
+	now1 = start ;
+	now2 = &start ;
+	
+	printf( "%s\n", (*now2)->name ) ; 
+	
+	GoNext2( &now2 ) ;
+	printf( "--%s--\n", (*now2)->name ) ; //call function & start next
+	
+	printf( "**%s\n", (*now2)->next->name ) ; // start next next
+	
+	
+	return 0 ;
+}//end function
+
+void SaveNode( struct studentNode *child, char n[], int a, char s, float g ) {
+	strcpy( child->name, n ) ;
+	child->age = a ;
+	child->sex = s ;
+	child->gpa = g ;
+	
+}//end fucntion
+
+void GoNext2( struct studentNode ***walk ) {
+	if( walk == NULL ) { 					//check  next node
+		return ;
+	}//end if
+	
+	(**walk) = (**walk)->next ;               //if have point next node
+	
+}//end function
